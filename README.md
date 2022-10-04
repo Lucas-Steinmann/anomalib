@@ -27,7 +27,7 @@
 
 ---
 
-**Note: ** This is a private fork of the project by [OpenVINO](https://github.com/openvinotoolkit/anomalib). If you want to pull changes from upstream use:
+**Note:** This is a private fork of the project by [OpenVINO](https://github.com/openvinotoolkit/anomalib). If you want to pull changes from upstream use:
 
 ```
 # This part has to be done only once:
