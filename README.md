@@ -27,6 +27,21 @@
 
 ---
 
+**Note: ** This is a private fork of the project by [OpenVINO](https://github.com/openvinotoolkit/anomalib). If you want to pull changes from upstream use:
+
+```
+# This part has to be done only once:
+git clone git@github.com:preML-GmbH/anomalib.git
+cd anomalib
+git remote add public https://github.com/openvinotoolkit/anomalib.git
+# Repeat this everytime you want to pull from upstream
+git pull public main # Creates a merge commit
+git push origin main
+
+```
+
+Adapted from: https://stackoverflow.com/a/30352360/13182493
+
 # Introduction
 
 Anomalib is a deep learning library that aims to collect state-of-the-art anomaly detection algorithms for benchmarking on both public and private datasets. Anomalib provides several ready-to-use implementations of anomaly detection algorithms described in the recent literature, as well as a set of tools that facilitate the development and implementation of custom models. The library has a strong focus on image-based anomaly detection, where the goal of the algorithm is to identify anomalous images, or anomalous pixel regions within images in a dataset. Anomalib is constantly updated with new algorithms and training/inference extensions, so keep checking!
