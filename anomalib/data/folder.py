@@ -114,7 +114,10 @@ def make_dataset(
 
     filenames = []
     labels = []
-    dirs = {"normal": normal_dir, "abnormal": abnormal_dir}
+    dirs = {"normal": normal_dir}
+
+    if abnormal_dir:
+        dirs = {**dirs, **{"abnormal": abnormal_dir}}
 
     if normal_test_dir:
         dirs = {**dirs, **{"normal_test": normal_test_dir}}
@@ -425,7 +428,9 @@ class Folder(LightningDataModule):
 
         self.root = _check_and_convert_path(root)
         self.normal_dir = self.root / normal_dir
-        self.abnormal_dir = self.root / abnormal_dir
+        self.abnormal_dir = abnormal_dir
+        if abnormal_dir:
+            self.abnormal_dir = self.root / abnormal_dir
         self.normal_test = normal_test_dir
         if normal_test_dir:
             self.normal_test = self.root / normal_test_dir
