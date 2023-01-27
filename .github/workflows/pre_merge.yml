@@ -8,7 +8,9 @@ on:
 
 jobs:
   Tox:
-    runs-on: [self-hosted, linux, x64]
+    # When you specify an array of labels, jobs will
+    # be queued on runners that have all the labels that you specify.
+    runs-on: [gpu, self-hosted, linux, x64]
     strategy:
       max-parallel: 1
     steps:
