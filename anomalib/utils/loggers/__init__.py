@@ -109,9 +109,14 @@ def get_experiment_logger(
                 if "category" not in config.dataset.keys()
                 else f"{config.dataset.category} {config.model.name}"
             )
+            if "name" in config.project.keys():
+                project_name = config.project.name
+                name = f"{config.dataset.name} {name}"
+            else:
+                project_name = config.dataset.name
             logger_list.append(
                 AnomalibWandbLogger(
-                    project=config.dataset.name,
+                    project=project_name,
                     name=name,
                     save_dir=wandb_logdir,
                 )
